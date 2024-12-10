@@ -1,0 +1,20 @@
+---
+- name: Update Ubuntu system
+  hosts: all
+  become: yes
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Upgrade all packages
+      apt:
+        upgrade: dist
+
+    - name: Remove unused packages
+      apt:
+        autoremove: yes
+
+    - name: Clean apt cache
+      apt:
+        autoclean: yes
