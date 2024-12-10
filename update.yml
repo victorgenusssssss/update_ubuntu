@@ -1,20 +1,19 @@
 ---
-- name: Update Ubuntu system
+- name: Update Ubuntu system using apt-get
   hosts: all
   become: yes
   tasks:
-    - name: Update apt cache
-      apt:
-        update_cache: yes
+    - name: Run apt-get update
+      command: apt-get update
 
-    - name: Upgrade all packages
-      apt:
-        upgrade: dist
+    - name: Run apt-get upgrade
+      command: apt-get upgrade -y
 
-    - name: Remove unused packages
-      apt:
-        autoremove: yes
+    - name: Run apt-get dist-upgrade
+      command: apt-get dist-upgrade -y
 
-    - name: Clean apt cache
-      apt:
-        autoclean: yes
+    - name: Run apt-get autoremove
+      command: apt-get autoremove -y
+
+    - name: Run apt-get autoclean
+      command: apt-get autoclean -y
