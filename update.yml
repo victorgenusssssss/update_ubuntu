@@ -3,17 +3,17 @@
   hosts: all
   become: yes
   tasks:
-    - name: Run apt-get update
+    - name: Run sudo apt-get update
       command: apt-get update
 
-    - name: Run apt-get upgrade
+    - name: Run sudo apt-get upgrade
       command: apt-get upgrade -y
 
-    - name: Run apt-get dist-upgrade
+    - name: Run sudo apt-get dist-upgrade
       command: apt-get dist-upgrade -y
 
-    - name: Run apt-get autoremove
+    - name: Run sudo apt-get autoremove
       command: apt-get autoremove -y
 
-    - name: Run apt-get autoclean
+    - name: Run sudo apt-get autoclean
       command: apt-get autoclean -y
